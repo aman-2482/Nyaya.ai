@@ -21,7 +21,7 @@ class Settings(BaseSettings):
         description="OpenRouter chat completions endpoint",
     )
     MODEL_NAME: str = Field(
-        default="mistralai/mistral-7b-instruct",
+        default="mistralai/mistral-small-3.1-24b-instruct:free",
         description="LLM model identifier on OpenRouter",
     )
     LLM_TEMPERATURE: float = Field(default=0.2, ge=0.0, le=1.0)
