@@ -18,7 +18,7 @@ langchain-text-splitters==0.3.2
 sentence-transformers==3.3.1
 
 # Vector Store
-faiss-cpu==1.9.0.post1
+faiss-cpu==1.13.2
 
 # PDF Processing
 pypdf==5.1.0
