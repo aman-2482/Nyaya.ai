@@ -313,10 +313,12 @@ export function TypingIndicator() {
                 </svg>
             </div>
             <div className="glass-card px-5 py-4 rounded-2xl rounded-tl-md">
-                <div className="flex items-center gap-1.5">
-                    <span className="typing-dot" />
-                    <span className="typing-dot" />
-                    <span className="typing-dot" />
+                <div className="flex items-center gap-1 text-gray-300">
+                    <span className="text-lg font-semibold">
+                        <span className="inline-block animate-bounce" style={{ animationDelay: '0s' }}>.</span>
+                        <span className="inline-block animate-bounce" style={{ animationDelay: '0.2s' }}>.</span>
+                        <span className="inline-block animate-bounce" style={{ animationDelay: '0.4s' }}>.</span>
+                    </span>
                 </div>
             </div>
         </div>
