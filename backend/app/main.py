@@ -32,7 +32,6 @@ from app.models.schemas import (
     SourceChunk,
 )
 from app.rag.retriever import retriever
-from app.services.embedding_service import embedding_service
 from app.services.llm_service import call_llm, stream_llm_events
 from app.utils.security import sanitize_input, validate_query_length
 
@@ -83,9 +82,6 @@ def _build_sources(chunks: list[dict]) -> list[SourceChunk]:
 async def lifespan(app: FastAPI):
     """Load the FAISS index on startup."""
     logger.info("NyayaAI starting up...")
-
-    # Warm up embedding model once at startup to avoid first-query cold start.
-    embedding_service.model
 
     retriever.load_index()
     if retriever.is_loaded:

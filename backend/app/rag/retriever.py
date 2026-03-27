@@ -16,7 +16,6 @@ import numpy as np
 from loguru import logger
 
 from app.config import settings
-from app.services.embedding_service import embedding_service
 
 
 class Retriever:
@@ -104,6 +103,9 @@ class Retriever:
                 return []
 
         top_k = top_k or settings.TOP_K
+
+        # Lazy import avoids loading torch/sentence-transformers at app startup.
+        from app.services.embedding_service import embedding_service
 
         # Embed the query
         query_embedding = embedding_service.embed_query(query)
