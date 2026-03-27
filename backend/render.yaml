@@ -13,7 +13,15 @@ services:
       - key: OPENROUTER_API_KEY
         sync: false  # Set manually in Render dashboard
       - key: MODEL_NAME
-        value: mistralai/mistral-7b-instruct
+        value: mistralai/ministral-3b-2512
+      - key: FAST_MODEL_CANDIDATES
+        value: mistralai/ministral-8b-2512,mistralai/mistral-7b-instruct-v0.1
+      - key: LLM_MAX_TOKENS
+        value: "384"
+      - key: TOP_K
+        value: "2"
+      - key: OPENROUTER_TIMEOUT_SECONDS
+        value: "45"
       - key: PYTHON_VERSION
         value: "3.11"
     healthCheckPath: /health
