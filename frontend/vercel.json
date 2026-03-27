@@ -8,5 +8,6 @@
             "source": "/api/:path*",
             "destination": "https://nyayaai-backend.onrender.com/:path*"
         }
-    ]
+    ],
+    "crons": [{"path": "/api/keep-alive", "schedule": "*/10 * * * *"}]
 }
